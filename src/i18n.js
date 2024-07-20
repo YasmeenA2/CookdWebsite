@@ -41,6 +41,7 @@ i18n
           nameError: "Please fill this field with alphabets only",
           emptyFieldsError: "Please fill in all fields",
           popupMessage: "Thank you for contacting us, we will get back to you as soon as possible! 😄",
+          Back: "Back"
 
          
         },
@@ -76,7 +77,8 @@ i18n
           submit: "Envoyer",
           nameError: "Veuillez remplir ce champ avec des alphabets uniquement",
           emptyFieldsError: "Veuillez remplir tous les champs",
-          popupMessage: "Merci de nous avoir contactés, nous vous répondrons dès que possible ! 😄"
+          popupMessage: "Merci de nous avoir contactés, nous vous répondrons dès que possible ! 😄",
+          Back: "retourner"
 
 
          

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FiHeart } from "react-icons/fi";
 import { FavoritesContext } from "../FavoritesContext";
@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 const RecipeDetails = () => {
   const { t } = useTranslation();
   let params = useParams();
+  const navigate = useNavigate();
   const [details, setDetails] = useState({});
   const [videos, setVideos] = useState([]);
   const [activeTab, setActiveTab] = useState("instructions");
@@ -165,6 +166,7 @@ const RecipeDetails = () => {
             </VideoWrapper>
           </div>
         )}
+         <BackButton onClick={() => navigate(-1)}>{t("Back")}</BackButton>
       </Info>
     </DetailWrapper>
   );
@@ -229,5 +231,21 @@ const Video = styled.div`
     color: #313131;
   }
 `;
+const BackButton = styled.button`
+  margin-top: 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  
+  padding: 1rem 2rem;
+  color: white;
+  background: rgb(236, 110, 56);
+  border: 2px solid black;
+  margin-right: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+`;
+
 
 export default RecipeDetails;
