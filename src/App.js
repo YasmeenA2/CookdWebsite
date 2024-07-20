@@ -47,7 +47,7 @@ function App() {
             path="/recipeDetails/:name"
             element={<RecipeDetails />}
           ></Route>
-           <Route path="/favorites" element={<Favorites />} /> {/* Add route for favorites */}
+           <Route path="/favorites" element={<Favorites />} /> 
            <Route path="/contact-us" element={<SimpleLayout><ContactUs /></SimpleLayout>} />
        
         </Routes>

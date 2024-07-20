@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useTranslation } from 'react-i18next'; // Import useTranslation
+import { useTranslation } from 'react-i18next';
 
 const languages = [
     { code: "en", lang: "English" },
@@ -8,10 +8,10 @@ const languages = [
 ];
 
 const LanguageSelector = () => {
-    const { i18n } = useTranslation(); // Get i18n instance
+    const { i18n } = useTranslation(); 
 
     const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng); // Change the language
+        i18n.changeLanguage(lng); 
     };
 
     return (
@@ -19,7 +19,7 @@ const LanguageSelector = () => {
             <ButtonContainer>
                 {languages.map((lng) => (
                     <LanguageButton 
-                        className={lng.code === i18n.language ? "selected" : ""} // Apply 'selected' class if the language is active
+                        className={lng.code === i18n.language ? "selected" : ""} 
                         key={lng.code} 
                         onClick={() => changeLanguage(lng.code)}
                     >

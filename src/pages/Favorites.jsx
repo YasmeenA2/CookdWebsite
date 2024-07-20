@@ -4,16 +4,16 @@ import { FavoritesContext } from "../FavoritesContext";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiHeart } from "react-icons/fi";
-import { useTranslation } from "react-i18next"; // Import useTranslation hook
+import { useTranslation } from "react-i18next"; 
 
 const Favorites = () => {
-  const { t } = useTranslation(); // Use useTranslation hook to access translations
+  const { t } = useTranslation(); 
   const { favorites, removeFavorite } = useContext(FavoritesContext);
 
   return (
     <FavoritesContainer>
       {favorites.length > 0 && (
-        <FavoritesHeading>{t("yourFavoriteRecipes")}</FavoritesHeading> // Translate heading
+        <FavoritesHeading>{t("yourFavoriteRecipes")}</FavoritesHeading>
       )}
 
       <FavoritesGrid
@@ -24,7 +24,7 @@ const Favorites = () => {
       >
         {favorites.length === 0 ? (
           <NoFavorites aria-live="polite">
-            <p>{t("noFavoritesMessage")}</p> {/* Translate message */}
+            <p>{t("noFavoritesMessage")}</p> 
           </NoFavorites>
         ) : (
           favorites.map((recipe) => (
@@ -35,7 +35,7 @@ const Favorites = () => {
               </Link>
               <FavoriteButton
                 onClick={() => removeFavorite(recipe.id)}
-                aria-label={t("removeFromFavorites", { title: recipe.title })} // Translate aria-label
+                aria-label={t("removeFromFavorites", { title: recipe.title })} 
               >
                 <FiHeart />
               </FavoriteButton>

@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { NavLink as ReactRouterNavLink } from 'react-router-dom';
 import { GiKnifeFork } from 'react-icons/gi';
 import LanguageSelector from './language-selector.jsx';
-import { useTranslation } from 'react-i18next'; // Import useTranslation hook
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
-  const { t } = useTranslation(); // Use useTranslation hook to access translations
+  const { t } = useTranslation(); 
 
   return (
     <Nav role="navigation" aria-label="Main Navigation">

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useTranslation } from "react-i18next"; // Import useTranslation hook
+import { useTranslation } from "react-i18next"; 
 
 const ContactUs = () => {
-  const { t } = useTranslation(); // Use useTranslation hook to access translations
+  const { t } = useTranslation(); 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,7 +24,7 @@ const ContactUs = () => {
           ...formData,
           [name]: value,
         });
-        setNameError(""); // Clear error message when the user starts typing valid input
+        setNameError(""); 
       } else {
         setNameError(t("nameError")); // Translate error message
       }
@@ -46,7 +46,7 @@ const ContactUs = () => {
       return;
     }
 
-    // Handle form submission logic here
+   
     console.log(formData);
     setShowPopup(true); // Show the popup
     setTimeout(() => setShowPopup(false), 3000); // Hide the popup after 3 seconds
@@ -54,10 +54,10 @@ const ContactUs = () => {
 
   return (
     <FormWrapper>
-      <h2>{t("contactUs")}</h2> {/* Translate heading */}
+      <h2>{t("contactUs")}</h2> 
       <form onSubmit={handleSubmit}>
         <LabelWrapper>
-          <label htmlFor="name">{t("name")}</label> {/* Translate label */}
+          <label htmlFor="name">{t("name")}</label>
           {nameError && <ErrorMessage>{nameError}</ErrorMessage>}
           <input
             type="text"
@@ -67,7 +67,7 @@ const ContactUs = () => {
             onChange={handleChange}
           />
         </LabelWrapper>
-        <label htmlFor="email">{t("email")}</label> {/* Translate label */}
+        <label htmlFor="email">{t("email")}</label>
         <input
           type="email"
           id="email"
@@ -75,14 +75,14 @@ const ContactUs = () => {
           value={formData.email}
           onChange={handleChange}
         />
-        <label htmlFor="question">{t("questionLabel")}</label> {/* Translate label */}
+        <label htmlFor="question">{t("questionLabel")}</label> 
         <textarea
           id="question"
           name="question"
           value={formData.question}
           onChange={handleChange}
         ></textarea>
-        <button type="submit">{t("submit")}</button> {/* Translate button text */}
+        <button type="submit">{t("submit")}</button>
       </form>
       {errorMessage && <FormErrorMessage>{errorMessage}</FormErrorMessage>}
       {showPopup && (
